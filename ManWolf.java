@@ -18,7 +18,7 @@ public class ManWolf {
 	private static final int Q9 = 9;
 	private static final int Q10 = 10;//error
 	//transitions from a given origin
-	private static int[][] delta = {
+	private static final int[][] delta = {
       //n   g   w   c   Origin
       {Q10, Q1, Q10, Q10}, //0 : q0
       {Q2, Q0, Q10, Q10}, //1 : q1
@@ -33,6 +33,7 @@ public class ManWolf {
       {Q10, Q10, Q10, Q10}  //10 : q10 (error)
     };
 
+    //represents the current state of the solution
     private int state;
 
 	public ManWolf(){
@@ -41,26 +42,34 @@ public class ManWolf {
 
 	public boolean analyze(String proposedSolution) {
 		this.state = Q0; //resetting state to support many evals per instance
-		evaluate(proposedSolution);
-		return isInFinalState();
+		evaluate(proposedSolution);//step through and evaluate the users proposed solution
+		return isInFinalState();//return true or false depending if the final state is allowed
 	}
 
+	//evalutates the users proposed solution step by step
 	private void evaluate(String proposedSolution){
 		int move;
+		//iterate over the users moves (chars) from their solution
 		for(char ch: proposedSolution.toCharArray()){
+			//get the entity that is represented by the current move (char)
 			move = mapCharToMove(ch);
+
 			try {
+				//try to advance the next state
 				this.state = delta[this.state][move];
 			} catch (ArrayIndexOutOfBoundsException e) {
-				this.state = Q10; //set error state
+				//advancement failed, exceptions default the state to the error state
+				this.state = Q10;
 			}
 		}
 	}
 
+	//checks whether the current state is a final state
 	private boolean isInFinalState() {
 		return (this.state == Q9) ? true : false;
 	}
 
+	//maps each of the possible inputs in char format to their respected entities
 	private int mapCharToMove(char ch){
 		switch (ch) {
 			case 'n':return MAN; 
