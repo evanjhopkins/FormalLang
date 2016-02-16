@@ -2,11 +2,17 @@ import java.util.Scanner;
 
 public class driverDFA {
 	public static void main(String args[]) {
-		Boolean isSolutionValid = false;
+		boolean solutionIsValid = false;
 		Scanner scanner = new Scanner(System.in);
 		System.out.println("Propose Solution: ");
 		String raw_input = scanner.nextLine();
 		ManWolf mwInstance = new ManWolf();
-		isSolutionValid = mwInstance.evaluate(raw_input);
+		solutionIsValid = mwInstance.evaluate(raw_input);
+
+		if(solutionIsValid) {
+			System.out.println("That is a solution.");
+		}else{
+			System.out.println("That is not a solution.");
+		}
 	}
 }
