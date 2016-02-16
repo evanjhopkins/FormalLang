@@ -1,0 +1,11 @@
+Q0,Start state
+Q1,"Normal state, NOT FINAL"
+Q2,"Normal state, NOT FINAL"
+Q3,"Normal state, NOT FINAL"
+Q4,"Normal state, NOT FINAL"
+Q5,"Normal state, NOT FINAL"
+Q6,"Normal state, NOT FINAL"
+Q7,"Normal state, NOT FINAL"
+Q8,"Normal state, NOT FINAL"
+Q9,Final state
+Q10,"Error state, meaning an illegal step was taken"
