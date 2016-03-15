@@ -1,0 +1,4 @@
+print ( " before " )
+*- comments test -*
+print ( " after " )
+
