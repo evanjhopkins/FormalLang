@@ -1,0 +1,17 @@
+10 pts
+
+Both essays respond and address the question correctly. Good job!
+
+The DFA is lacking the following:
+- states that specifically address all the possible symbols that can be
+  observed at any given state.
+- error states or non-accepting states when you receive other symbol different
+  from the one you expect to receive.
+- arrows going to the error state(s); remember that at every state you can
+  actually get any symbol from the alphabet $\Sigma$.
+
+You could use $\Sigma$ more to save some space. Lets say that you want to make
+an arrow if the next symbol is not an 'f', you could simply say $\{\Sigma - f\}$,
+which means the set of all possible symbols of the whole alphabet minus 'f'.
+
+- Dr. Rivas
