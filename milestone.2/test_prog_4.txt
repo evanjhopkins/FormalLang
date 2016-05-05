@@ -1,0 +1,2 @@
+var c
+c = 5 + " logically wrong but grammatically right "

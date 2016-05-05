@@ -1,0 +1,6 @@
+var a
+a = 5
+print ( a )
+print ( 5 )
+print ( " this is a string " )
+print ( 2 + 3 + 5 )
