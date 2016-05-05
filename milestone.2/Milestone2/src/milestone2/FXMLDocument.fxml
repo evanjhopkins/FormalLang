@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.web.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<BorderPane fx:id="borderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="636.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="milestone2.FXMLDocumentController">
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+                <MenuItem fx:id="close" onAction="#handleClose" mnemonicParsing="false" text="Close" />
+                <MenuItem fx:id="open" onAction="#handleOpen" mnemonicParsing="false" text="Open" />
+                <MenuItem fx:id="save" onAction="#handleSave" mnemonicParsing="false" text="Save" />
+                <MenuItem fx:id="colorScheme" onAction="#parse" mnemonicParsing="false" text="Color Scheme" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+   <center>
+      <HTMLEditor fx:id="textArea" htmlText="default" prefHeight="200.0" prefWidth="506.0" BorderPane.alignment="CENTER" />
+   </center>
+</BorderPane>
